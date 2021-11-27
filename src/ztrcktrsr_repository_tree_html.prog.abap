@@ -163,8 +163,10 @@ START-OF-SELECTION.
 
   CASE 'X'.
     WHEN p_dis.
+      "display html
 
       IF p_sthl > 1.
+        "add dummy titles to keep html structure clean
         DO p_sthl - 1 TIMES.
           INSERT |<h{ sy-index ALIGN = LEFT WIDTH = 1 }>Dummy title { sy-index }</h{ sy-index ALIGN = LEFT WIDTH = 1 }>| INTO html INDEX sy-index.
         ENDDO.
